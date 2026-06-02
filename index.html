@@ -10,18 +10,29 @@
 </head>
 <body class="lang-es">
 
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<div id="cursor-trail"></div>
+
 <nav>
   <div class="nav-logo">MT</div>
   <ul class="nav-links">
     <li><a href="#skills"><span data-lang="es">Habilidades</span><span data-lang="en">Skills</span></a></li>
+    <li><a href="#how"><span data-lang="es">Proceso</span><span data-lang="en">Process</span></a></li>
     <li><a href="#experience"><span data-lang="es">Experiencia</span><span data-lang="en">Experience</span></a></li>
     <li><a href="#education"><span data-lang="es">Educación</span><span data-lang="en">Education</span></a></li>
     <li><a href="#projects"><span data-lang="es">Proyectos</span><span data-lang="en">Projects</span></a></li>
     <li><a href="#contact"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></li>
   </ul>
-  <div class="lang-toggle">
-    <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
-    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  <div class="nav-controls">
+    <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+      <span id="theme-icon">◐</span>
+    </button>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 </nav>
 
@@ -45,7 +56,7 @@ Apasionado por la innovación y la transformación digital, he participado en el
 Me caracterizo por mi capacidad de aprendizaje continuo, pensamiento analítico, creatividad para la resolución de problemas y compromiso con la construcción de soluciones tecnológicas que generen un impacto positivo y tangible en la sociedad.</span>
       <span data-lang="en">Systems Engineering student (seventh semester) at Universidad Monserrate and certified SENA technologist, with a solid academic background enriched by six-month academic exchanges at Universidad Piloto de Colombia and Universidad Minuto de Dios. These experiences have allowed me to strengthen my knowledge, broaden my professional perspective, and develop a comprehensive vision of technology applied across different contexts.
 <br><br>
-Passionate about innovation and digital transformation, I have participated in the design and development of technological solutions aimed at optimizing processes and generating value for organizations. Notable projects include an attendance management system that helps teachers efficiently record and track student attendance, contributing to more efficient academic administration. I have also developed digital interfaces focused on strengthening the connection between communities and non-profit organizations through intuitive and accessible user experiences.
+Passionate about innovation and digital transformation, I have participated in the design and development of technological solutions aimed at optimizing processes and generating value for organizations. Notable projects include an attendance management system that helps teachers efficiently record and track student attendance. I have also developed digital interfaces focused on strengthening the connection between communities and non-profit organizations through intuitive and accessible user experiences.
 <br><br>
 I am characterized by my continuous learning ability, analytical thinking, creativity in problem-solving, and commitment to building technological solutions that generate a positive and tangible impact on society.</span>
     </p>
@@ -78,25 +89,202 @@ I am characterized by my continuous learning ability, analytical thinking, creat
     <div class="section-line"></div>
   </div>
   <div class="skills-grid">
-    <div class="skill-tag">JavaScript</div>
-    <div class="skill-tag">React</div>
-    <div class="skill-tag">Node.js</div>
-    <div class="skill-tag">Python</div>
-    <div class="skill-tag">Django</div>
-    <div class="skill-tag">TensorFlow</div>
-    <div class="skill-tag">HTML / CSS</div>
-    <div class="skill-tag">Java</div>
-    <div class="skill-tag">Spring Boot</div>
-    <div class="skill-tag">C++</div>
-    <div class="skill-tag">MySQL</div>
-    <div class="skill-tag">Git</div>
+    <div class="skill-card">
+          <span class="skill-name">JavaScript</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Sistema de asistencia · Fundación Vive</span>
+            <span data-lang="en">Used for →<br>Attendance system · Fundación Vive</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">React</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Interfaces UI · Fundación Vive</span>
+            <span data-lang="en">Used for →<br>UI interfaces · Fundación Vive</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">Node.js</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Backend APIs · proyectos personales</span>
+            <span data-lang="en">Used for →<br>Backend APIs · personal projects</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">Python</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Scripts de automatización · ML</span>
+            <span data-lang="en">Used for →<br>Automation scripts · ML</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">Django</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Backend web · proyectos académicos</span>
+            <span data-lang="en">Used for →<br>Web backend · academic projects</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">TensorFlow</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Modelos ML · cursos IA</span>
+            <span data-lang="en">Used for →<br>ML models · AI courses</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">HTML / CSS</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Sitio web · Fundación Vive</span>
+            <span data-lang="en">Used for →<br>Website · Fundación Vive</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">Java</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Proyectos académicos · SENA</span>
+            <span data-lang="en">Used for →<br>Academic projects · SENA</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">Spring Boot</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>APIs REST · universidad</span>
+            <span data-lang="en">Used for →<br>REST APIs · university</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">C++</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Algoritmos · SENA</span>
+            <span data-lang="en">Used for →<br>Algorithms · SENA</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">MySQL</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>BD asistencia · Fundación Vive</span>
+            <span data-lang="en">Used for →<br>Attendance DB · Fundación Vive</span>
+          </span>
+        </div>
+        <div class="skill-card">
+          <span class="skill-name">Git</span>
+          <span class="skill-use">
+            <span data-lang="es">Usé esto para →<br>Control de versiones · todos los proyectos</span>
+            <span data-lang="en">Used for →<br>Version control · all projects</span>
+          </span>
+        </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section id="how">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title"><span data-lang="es">Cómo Trabajo</span><span data-lang="en">How I Work</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <span class="how-icon">🔍</span>
+      <div class="how-title"><span data-lang="es">Entender</span><span data-lang="en">Understand</span></div>
+      <div class="how-desc">
+        <span data-lang="es">Escucho al usuario final antes de escribir una sola línea. El problema real rara vez es el problema que parece.</span>
+        <span data-lang="en">I listen to the end user before writing a single line. The real problem is rarely the one that appears on the surface.</span>
+      </div>
+      <div class="how-arrow">→</div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <span class="how-icon">🎯</span>
+      <div class="how-title"><span data-lang="es">Diseñar</span><span data-lang="en">Design</span></div>
+      <div class="how-desc">
+        <span data-lang="es">Estructuro la solución en papel antes de codificar. Arquitectura limpia, flujos claros y baja deuda técnica desde el inicio.</span>
+        <span data-lang="en">I structure the solution on paper before coding. Clean architecture, clear flows and low technical debt from the start.</span>
+      </div>
+      <div class="how-arrow">→</div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <span class="how-icon">⚙️</span>
+      <div class="how-title"><span data-lang="es">Construir</span><span data-lang="en">Build</span></div>
+      <div class="how-desc">
+        <span data-lang="es">Código modular, legible y documentado. Entrego funcionalidades incrementalmente para recibir retroalimentación temprana.</span>
+        <span data-lang="en">Modular, readable and documented code. I deliver functionality incrementally to receive early feedback.</span>
+      </div>
+      <div class="how-arrow">→</div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">04</div>
+      <span class="how-icon">🔄</span>
+      <div class="how-title"><span data-lang="es">Iterar</span><span data-lang="en">Iterate</span></div>
+      <div class="how-desc">
+        <span data-lang="es">El primer entregable no es el final. Refino, optimizo y mejoro con base en uso real y métricas concretas.</span>
+        <span data-lang="en">The first deliverable is not the end. I refine, optimize and improve based on real usage and concrete metrics.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENTLY LEARNING -->
+  <div class="learning-wrap">
+    <div class="learning-header">
+      <div class="learning-pulse"></div>
+      <span class="learning-label"><span data-lang="es">Actualmente aprendiendo</span><span data-lang="en">Currently learning</span></span>
+    </div>
+    <div class="learning-cards">
+      <div class="learning-card">
+          <div class="learning-card-top">
+            <span class="learning-icon">🎓</span>
+            <span class="learning-status"><span data-lang="es">En curso</span><span data-lang="en">In progress</span></span>
+          </div>
+          <div class="learning-title">Ingeniería de Sistemas</div>
+          <div class="learning-sub">Universidad Monserrate · 7.° semestre</div>
+          <div class="learning-bar-wrap">
+            <div class="learning-bar" style="--pct:75%"></div>
+          </div>
+        </div>
+<div class="learning-card">
+          <div class="learning-card-top">
+            <span class="learning-icon">⚡</span>
+            <span class="learning-status"><span data-lang="es">En curso</span><span data-lang="en">In progress</span></span>
+          </div>
+          <div class="learning-title">Full Stack Developer</div>
+          <div class="learning-sub">Mimo.org · JavaScript, React, Node</div>
+          <div class="learning-bar-wrap">
+            <div class="learning-bar" style="--pct:60%"></div>
+          </div>
+        </div>
+<div class="learning-card">
+          <div class="learning-card-top">
+            <span class="learning-icon">🤖</span>
+            <span class="learning-status"><span data-lang="es">Completado</span><span data-lang="en">Completed</span></span>
+          </div>
+          <div class="learning-title">Fundamentos de IA</div>
+          <div class="learning-sub">Cisco · IBM SkillsBuild</div>
+          <div class="learning-bar-wrap">
+            <div class="learning-bar" style="--pct:100%"></div>
+          </div>
+        </div>
+<div class="learning-card">
+          <div class="learning-card-top">
+            <span class="learning-icon">🌐</span>
+            <span class="learning-status"><span data-lang="es">Completado</span><span data-lang="en">Completed</span></span>
+          </div>
+          <div class="learning-title">Protocolos de Redes</div>
+          <div class="learning-sub">Cisco Networking Academy</div>
+          <div class="learning-bar-wrap">
+            <div class="learning-bar" style="--pct:100%"></div>
+          </div>
+        </div>
+
+    </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header">
-    <span class="section-num">02</span>
+    <span class="section-num">03</span>
     <h2 class="section-title"><span data-lang="es">Experiencia</span><span data-lang="en">Experience</span></h2>
     <div class="section-line"></div>
   </div>
@@ -109,18 +297,9 @@ I am characterized by my continuous learning ability, analytical thinking, creat
       <span class="exp-date">2025</span>
     </div>
     <ul class="exp-bullets">
-      <li>
-        <span data-lang="es">Diseñé e implementé un sistema de registro de asistencia para niños que redujo significativamente el tiempo administrativo de las maestras y minimizó errores de seguimiento.</span>
-        <span data-lang="en">Designed and implemented a children's attendance registration system that significantly reduced teachers' administrative time and minimized tracking errors.</span>
-      </li>
-      <li>
-        <span data-lang="es">Rediseñé y actualicé el sitio web institucional de la fundación, mejorando la presencia digital de la organización.</span>
-        <span data-lang="en">Redesigned and updated the foundation's institutional website, improving the organization's digital presence.</span>
-      </li>
-      <li>
-        <span data-lang="es">Colaboré directamente con el equipo pedagógico para levantar requerimientos y entregar una solución alineada a sus necesidades reales.</span>
-        <span data-lang="en">Collaborated directly with the teaching team to gather requirements and deliver a solution aligned with their real needs.</span>
-      </li>
+      <li><span data-lang="es">Diseñé e implementé un sistema de registro de asistencia para niños que redujo significativamente el tiempo administrativo de las maestras y minimizó errores de seguimiento.</span><span data-lang="en">Designed and implemented a children's attendance registration system that significantly reduced teachers' administrative time and minimized tracking errors.</span></li>
+      <li><span data-lang="es">Rediseñé y actualicé el sitio web institucional de la fundación, mejorando la presencia digital de la organización.</span><span data-lang="en">Redesigned and updated the foundation's institutional website, improving the organization's digital presence.</span></li>
+      <li><span data-lang="es">Colaboré directamente con el equipo pedagógico para levantar requerimientos y entregar una solución alineada a sus necesidades reales.</span><span data-lang="en">Collaborated directly with the teaching team to gather requirements and deliver a solution aligned with their real needs.</span></li>
     </ul>
   </div>
 </section>
@@ -128,47 +307,17 @@ I am characterized by my continuous learning ability, analytical thinking, creat
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-header">
-    <span class="section-num">03</span>
+    <span class="section-num">04</span>
     <h2 class="section-title"><span data-lang="es">Formación Académica</span><span data-lang="en">Education</span></h2>
     <div class="section-line"></div>
   </div>
   <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-inst"><span data-lang="es">Universidad Monserrate</span><span data-lang="en">Monserrate University</span></div>
-      <div class="edu-degree"><span data-lang="es">Ingeniería de Sistemas · 7.º semestre</span><span data-lang="en">Systems Engineering · 7th semester</span></div>
-      <div class="edu-detail">Bogotá, Colombia</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon">🔄</div>
-      <div class="edu-inst"><span data-lang="es">Universidad Piloto de Colombia</span><span data-lang="en">Piloto University of Colombia</span></div>
-      <div class="edu-degree"><span data-lang="es">Intercambio Académico · 6 meses</span><span data-lang="en">Academic Exchange · 6 months</span></div>
-      <div class="edu-detail">Bogotá, Colombia</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon">🔄</div>
-      <div class="edu-inst">Universidad Minuto de Dios</div>
-      <div class="edu-degree"><span data-lang="es">Intercambio Académico · 6 meses</span><span data-lang="en">Academic Exchange · 6 months</span></div>
-      <div class="edu-detail">Bogotá, Colombia</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon">🏛️</div>
-      <div class="edu-inst">SENA</div>
-      <div class="edu-degree"><span data-lang="es">Tecnólogo en Análisis y Desarrollo de Software</span><span data-lang="en">Technologist in Software Analysis & Development</span></div>
-      <div class="edu-detail">Colombia</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon">✈️</div>
-      <div class="edu-inst">Flushing High School</div>
-      <div class="edu-degree"><span data-lang="es">Intercambio Internacional</span><span data-lang="en">International Exchange</span></div>
-      <div class="edu-detail">New York, USA</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon">🏫</div>
-      <div class="edu-inst">Gimnasio Corazón de María</div>
-      <div class="edu-degree"><span data-lang="es">Bachillerato</span><span data-lang="en">High School Diploma</span></div>
-      <div class="edu-detail">Bogotá, Colombia</div>
-    </div>
+    <div class="edu-card"><div class="edu-icon">🎓</div><div class="edu-inst"><span data-lang="es">Universidad Monserrate</span><span data-lang="en">Monserrate University</span></div><div class="edu-degree"><span data-lang="es">Ingeniería de Sistemas · 7.º semestre</span><span data-lang="en">Systems Engineering · 7th semester</span></div><div class="edu-detail">Bogotá, Colombia</div></div>
+    <div class="edu-card"><div class="edu-icon">🔄</div><div class="edu-inst"><span data-lang="es">Universidad Piloto de Colombia</span><span data-lang="en">Piloto University of Colombia</span></div><div class="edu-degree"><span data-lang="es">Intercambio Académico · 6 meses</span><span data-lang="en">Academic Exchange · 6 months</span></div><div class="edu-detail">Bogotá, Colombia</div></div>
+    <div class="edu-card"><div class="edu-icon">🔄</div><div class="edu-inst">Universidad Minuto de Dios</div><div class="edu-degree"><span data-lang="es">Intercambio Académico · 6 meses</span><span data-lang="en">Academic Exchange · 6 months</span></div><div class="edu-detail">Bogotá, Colombia</div></div>
+    <div class="edu-card"><div class="edu-icon">🏛️</div><div class="edu-inst">SENA</div><div class="edu-degree"><span data-lang="es">Tecnólogo en Análisis y Desarrollo de Software</span><span data-lang="en">Technologist in Software Analysis & Development</span></div><div class="edu-detail">Colombia</div></div>
+    <div class="edu-card"><div class="edu-icon">✈️</div><div class="edu-inst">Flushing High School</div><div class="edu-degree"><span data-lang="es">Intercambio Internacional</span><span data-lang="en">International Exchange</span></div><div class="edu-detail">New York, USA</div></div>
+    <div class="edu-card"><div class="edu-icon">🏫</div><div class="edu-inst">Gimnasio Corazón de María</div><div class="edu-degree"><span data-lang="es">Bachillerato</span><span data-lang="en">High School Diploma</span></div><div class="edu-detail">Bogotá, Colombia</div></div>
   </div>
   <div style="margin-top:3rem;">
     <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text-muted);margin-bottom:1.5rem;font-weight:400;">
@@ -188,7 +337,7 @@ I am characterized by my continuous learning ability, analytical thinking, creat
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2 class="section-title"><span data-lang="es">Proyectos</span><span data-lang="en">Projects</span></h2>
     <div class="section-line"></div>
   </div>
@@ -196,10 +345,7 @@ I am characterized by my continuous learning ability, analytical thinking, creat
     <div class="projects-note-icon">⚡</div>
     <div class="projects-note-text">
       <h3><span data-lang="es">Repositorio en GitHub</span><span data-lang="en">GitHub Repository</span></h3>
-      <p>
-        <span data-lang="es">Todos mis proyectos están disponibles en GitHub. Explora el código fuente, contribuciones y trabajo en progreso.</span>
-        <span data-lang="en">All my projects are available on GitHub. Explore source code, contributions, and work in progress.</span>
-      </p>
+      <p><span data-lang="es">Todos mis proyectos están disponibles en GitHub. Explora el código fuente, contribuciones y trabajo en progreso.</span><span data-lang="en">All my projects are available on GitHub. Explore source code, contributions, and work in progress.</span></p>
     </div>
     <a href="https://github.com/mikeystc" target="_blank" class="github-link">GitHub →</a>
   </div>
@@ -208,19 +354,36 @@ I am characterized by my continuous learning ability, analytical thinking, creat
 <!-- LANGUAGES -->
 <section id="languages">
   <div class="section-header">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title"><span data-lang="es">Idiomas</span><span data-lang="en">Languages</span></h2>
     <div class="section-line"></div>
   </div>
-  <div class="lang-grid">
-    <div class="lang-card">
-      <div class="lang-name"><span data-lang="es">Español</span><span data-lang="en">Spanish</span></div>
-      <div class="lang-level"><span data-lang="es">Nativo</span><span data-lang="en">Native</span></div>
-    </div>
-    <div class="lang-card">
-      <div class="lang-name"><span data-lang="es">Inglés</span><span data-lang="en">English</span></div>
-      <div class="lang-level">B2 — Upper Intermediate</div>
-    </div>
+  <div class="lang-bars">
+    <div class="lang-bar-item">
+          <div class="lang-bar-header">
+            <span class="lang-bar-name">Español</span>
+            <div class="lang-bar-info">
+              <span class="lang-bar-level"><span data-lang="es">Nativo</span><span data-lang="en">Native</span></span>
+              <span class="lang-bar-pct">100%</span>
+            </div>
+          </div>
+          <div class="lang-bar-track">
+            <div class="lang-bar-fill" style="--pct:100%"></div>
+          </div>
+        </div>
+<div class="lang-bar-item">
+          <div class="lang-bar-header">
+            <span class="lang-bar-name">Inglés / English</span>
+            <div class="lang-bar-info">
+              <span class="lang-bar-level"><span data-lang="es">B2 — Upper Intermediate</span><span data-lang="en">B2 — Upper Intermediate</span></span>
+              <span class="lang-bar-pct">82%</span>
+            </div>
+          </div>
+          <div class="lang-bar-track">
+            <div class="lang-bar-fill" style="--pct:82%"></div>
+          </div>
+        </div>
+
   </div>
 </section>
 
@@ -241,26 +404,10 @@ I am characterized by my continuous learning ability, analytical thinking, creat
       </button>
     </div>
     <div class="contact-links">
-      <a href="mailto:tabordaceronmichael@gmail.com" class="contact-link">
-        <span class="contact-link-icon">✉</span>
-        <span class="contact-link-label">Email</span>
-        <span class="contact-link-value">tabordaceronmichael@gmail.com</span>
-      </a>
-      <a href="https://linkedin.com/in/michael-steven-taborda-ceron-a87075280" target="_blank" class="contact-link">
-        <span class="contact-link-icon">in</span>
-        <span class="contact-link-label">LinkedIn</span>
-        <span class="contact-link-value">michael-steven-taborda-ceron</span>
-      </a>
-      <a href="https://github.com/mikeystc" target="_blank" class="contact-link">
-        <span class="contact-link-icon">⌨</span>
-        <span class="contact-link-label">GitHub</span>
-        <span class="contact-link-value">@mikeystc</span>
-      </a>
-      <div class="contact-link" style="cursor:default;">
-        <span class="contact-link-icon">📍</span>
-        <span class="contact-link-label"><span data-lang="es">Ciudad</span><span data-lang="en">Location</span></span>
-        <span class="contact-link-value">Bogotá, Colombia</span>
-      </div>
+      <a href="mailto:tabordaceronmichael@gmail.com" class="contact-link"><span class="contact-link-icon">✉</span><span class="contact-link-label">Email</span><span class="contact-link-value">tabordaceronmichael@gmail.com</span></a>
+      <a href="https://linkedin.com/in/michael-steven-taborda-ceron-a87075280" target="_blank" class="contact-link"><span class="contact-link-icon">in</span><span class="contact-link-label">LinkedIn</span><span class="contact-link-value">michael-steven-taborda-ceron</span></a>
+      <a href="https://github.com/mikeystc" target="_blank" class="contact-link"><span class="contact-link-icon">⌨</span><span class="contact-link-label">GitHub</span><span class="contact-link-value">@mikeystc</span></a>
+      <div class="contact-link" style="cursor:default;"><span class="contact-link-icon">📍</span><span class="contact-link-label"><span data-lang="es">Ciudad</span><span data-lang="en">Location</span></span><span class="contact-link-value">Bogotá, Colombia</span></div>
     </div>
   </div>
 </section>
