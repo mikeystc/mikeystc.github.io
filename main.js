@@ -1,99 +1,118 @@
-// ── LANG ──
-function setLang(lang) {
+
+/* ── LANG ── */
+function setLang(lang){
   document.body.classList.remove('lang-es','lang-en');
-  document.body.classList.add('lang-' + lang);
-  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.body.classList.add('lang-'+lang);
+  document.getElementById('btn-es').classList.toggle('active',lang==='es');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
 }
 
-// ── THEME ──
-function toggleTheme() {
-  const isLight = document.body.classList.toggle('light');
-  document.getElementById('theme-icon').textContent = isLight ? '☀' : '◐';
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-}
+/* ── THEME ── */
 (function(){
-  if(localStorage.getItem('theme') === 'light'){
-    document.body.classList.add('light');
-    const ic = document.getElementById('theme-icon');
-    if(ic) ic.textContent = '☀';
-  }
+  if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
 })();
 
-// ── CV DOWNLOAD ──
-function downloadCV() {
-  const a = document.createElement('a');
-  a.href = 'cv-michael-taborda.pdf';
-  a.download = 'CV_Michael_Taborda.pdf';
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+}
+
+/* ── DOWNLOAD ── */
+function downloadCV(){
+  const a=document.createElement('a');
+  a.href='cv-michael-taborda.pdf';
+  a.download='CV_Michael_Taborda.pdf';
   a.click();
 }
 
-// ── CUSTOM CURSOR ──
-const dot   = document.getElementById('cursor-dot');
-const ring  = document.getElementById('cursor-ring');
-const trail = document.getElementById('cursor-trail');
+/* ── CUSTOM CURSOR ── */
+const curDot  = document.getElementById('cur-dot');
+const curRing = document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0,raf;
 
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  dot.style.left  = mx + 'px';
-  dot.style.top   = my + 'px';
-
-  // Spawn trail particle
-  const p = document.createElement('div');
-  p.style.cssText = `
-    position:fixed; width:4px; height:4px;
-    background:var(--accent); border-radius:50%;
-    left:${mx}px; top:${my}px;
-    transform:translate(-50%,-50%);
-    pointer-events:none;
-    opacity:0.5;
-    transition: opacity 0.5s, transform 0.5s;
-    z-index:99996;
-  `;
-  trail.appendChild(p);
-  requestAnimationFrame(() => {
-    p.style.opacity = '0';
-    p.style.transform = 'translate(-50%,-50%) scale(2)';
-  });
-  setTimeout(() => p.remove(), 500);
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  curDot.style.left=mx+'px';
+  curDot.style.top=my+'px';
+  spawnParticle(mx,my);
 });
 
-// Smooth ring follow
-function animRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
-  requestAnimationFrame(animRing);
+document.addEventListener('mousedown',()=>document.body.classList.add('cur-click'));
+document.addEventListener('mouseup',()=>document.body.classList.remove('cur-click'));
+
+function lerpRing(){
+  rx+=(mx-rx)*0.1;
+  ry+=(my-ry)*0.1;
+  curRing.style.left=rx+'px';
+  curRing.style.top=ry+'px';
+  requestAnimationFrame(lerpRing);
 }
-animRing();
+lerpRing();
 
-// Expand on interactive elements
-document.querySelectorAll('a, button, .skill-card, .how-step, .learning-card, .edu-card, .exp-card').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-expand'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-expand'));
+document.querySelectorAll('a,button,.skill-card,.edu-card,.exp-card,.lcard,.repo-card,.book-arrow,.theme-toggle,.lang-btn').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('cur-hover'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-hover'));
 });
 
-// ── SCROLL ANIMATIONS ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      el.style.animation = 'fadeUp 0.7s ease both';
-      // Animate bars
-      el.querySelectorAll('.lang-bar-fill, .learning-bar').forEach(bar => {
-        bar.classList.add('animated');
-      });
-      observer.unobserve(el);
-    }
+function spawnParticle(x,y){
+  const p=document.createElement('div');
+  Object.assign(p.style,{
+    position:'fixed',pointerEvents:'none',zIndex:'99996',
+    width:'4px',height:'4px',borderRadius:'50%',
+    background:'var(--accent)',
+    left:x+'px',top:y+'px',
+    transform:'translate(-50%,-50%)',
+    opacity:'0.45',
+    transition:'opacity .4s ease, transform .4s ease'
   });
-}, { threshold: 0.08 });
+  document.body.appendChild(p);
+  requestAnimationFrame(()=>{
+    p.style.opacity='0';
+    p.style.transform='translate(-50%,-50%) scale(2.5)';
+  });
+  setTimeout(()=>p.remove(),420);
+}
+
+/* ── BOOK / HOW I WORK ── */
+let currentPage=0;
+const pages=document.querySelectorAll('.book-page');
+const dots=document.querySelectorAll('.book-dot');
+const btnPrev=document.getElementById('book-prev');
+const btnNext=document.getElementById('book-next');
+
+function goPage(n){
+  pages[currentPage].classList.remove('active');
+  pages[currentPage].classList.add('exit-left');
+  setTimeout(()=>pages[currentPage].classList.remove('exit-left'),500);
+  dots[currentPage].classList.remove('active');
+  currentPage=n;
+  pages[currentPage].classList.add('active');
+  dots[currentPage].classList.add('active');
+  btnPrev.disabled=currentPage===0;
+  btnNext.disabled=currentPage===pages.length-1;
+}
+if(pages.length){
+  pages[0].classList.add('active');
+  dots[0].classList.add('active');
+  btnPrev.disabled=true;
+  dots.forEach((d,i)=>d.addEventListener('click',()=>{if(i!==currentPage)goPage(i);}));
+}
+
+/* ── INTERSECTION OBSERVER ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target;
+    el.style.opacity='';
+    el.style.animation='fadeUp .65s ease both';
+    el.querySelectorAll('.sk-bar,.lb-fill,.lbar').forEach(b=>b.classList.add('on'));
+    io.unobserve(el);
+  });
+},{threshold:0.08});
 
 document.querySelectorAll(
-  '.exp-card, .edu-card, .cert-item, .skill-card, .how-step, .learning-card, .lang-bar-item'
-).forEach(el => {
-  el.style.opacity = '0';
-  observer.observe(el);
+  '.skill-card,.edu-card,.exp-card,.cert-item,.lcard,.lb-item,.repo-card'
+).forEach(el=>{
+  el.style.opacity='0';
+  io.observe(el);
 });
